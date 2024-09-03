@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <style type="text/css">
+        b {
+            width: 100px;
+            display: inline-block;
+        }
+        .button {
+            margin: 2%;
+            padding-left: 4.50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="form">
+        <b>Name:</b>
+        <input type="text" id="n"><br><br>
+        <b>Grade:</b><br>
+        <b>IP1:</b>
+        <input type="number" id="ip1" min="0" max="100"><br><br>
+        <b>IM1:</b>
+        <input type="number" id="im1" min="0" max="100"><br><br>
+        <b>OOP:</b>
+        <input type="number" id="oop" min="0" max="100"><br><br>
+        <b>EDP:</b>
+        <input type="number" id="edp" min="0" max="100"><br><br>
+        <b>HC2:</b>
+        <input type="number" id="hc2" min="0" max="100"><br><br>
+    </div>
+    <div class="button">
+        <button onclick="displayForm()">Compute</button>
+    </div>
+
+    <script>
+        function displayForm() {
+        
+            var name = document.getElementById('n').value;
+            var ip1 = parseFloat(document.getElementById('ip1').value);
+            var im1 = parseFloat(document.getElementById('im1').value);
+            var oop = parseFloat(document.getElementById('oop').value);
+            var edp = parseFloat(document.getElementById('edp').value);
+            var hc2 = parseFloat(document.getElementById('hc2').value);
+
+           
+            if (isNaN(ip1) || isNaN(im1) || isNaN(oop) || isNaN(edp) || isNaN(hc2)) {
+                alert("Please enter valid numbers for all grades.");
+                return;
+            }
+
+           
+            var total = ip1 + im1 + oop + edp + hc2;
+            var average = total / 5;
+
+            
+            alert("Name: " + name + "\n" + "\n" +
+                  "IP1:   " + ip1 + "\n" +
+                  "IM1:  " + im1 + "\n" +
+                  "OOP: " + oop + "\n" +
+                  "EDP:  " + edp + "\n" +
+                  "HC2:  " + hc2 + "\n" + "\n" +
+                  "Average:  " + average);
+        }
+    </script>
+</body>
+</html>
+
